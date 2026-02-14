@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="main-container">
+
+        <div class="card">
+            <h1>🏠 House Price Prediction</h1>
+            <p class="subtitle">Enter property details below</p>
+
+            <form action="/predict" method="post">
+
+                <div class="input-group">
+                    <input type="number" name="area" placeholder="Area (sq ft)" required>
+                </div>
+
+                <div class="input-group">
+                    <input type="number" name="bedrooms" placeholder="Bedrooms" required>
+                </div>
+
+                <div class="input-group">
+                    <input type="number" name="bathrooms" placeholder="Bathrooms" required>
+                </div>
+
+                <div class="input-group">
+                    <input type="number" name="stories" placeholder="Stories" required>
+                </div>
+
+                <div class="input-group">
+                    <input type="number" name="parking" placeholder="Parking Spaces" required>
+                </div>
+
+                <button type="submit">Predict Price</button>
+
+            </form>
+
+            {% if prediction_text %}
+                <div class="result">
+                    {{ prediction_text }}
+                </div>
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</body>
+</html>
