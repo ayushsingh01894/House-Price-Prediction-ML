@@ -7,7 +7,6 @@ This project predicts house prices using Linear Regression and provides a web in
 - Flask
 - Scikit-learn
 - HTML, CSS
-- Matplotlib
 
 ## 🔹 Features
 - Predict house price based on input features
